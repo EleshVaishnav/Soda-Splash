@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Soda Splash — Jodhpur</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div id="cursor"></div>
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar">
+    <a href="#home" class="nav-logo">🥤 Soda Splash</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#menu"     onclick="closeMenu()">Menu</a></li>
+      <li><a href="#features" onclick="closeMenu()">Why Us</a></li>
+      <li><a href="#reviews"  onclick="closeMenu()">Reviews</a></li>
+      <li><a href="#visit"    onclick="closeMenu()">Visit</a></li>
+      <li><a href="tel:+919829745400" class="nav-cta">Call Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <div class="hero-canvas" id="bubbleCanvas"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        Sardarpura, Jodhpur · Est. 2020
+      </div>
+      <h1>The Soda<span class="acc">Splash</span></h1>
+      <p class="hero-sub">60+ flavours of sodas, mocktails, cold coffees, fast food &amp; more. Open daily 10 AM – 12 AM.</p>
+      <div class="hero-btns">
+        <a href="#menu"  class="btn btn-p">Browse Full Menu</a>
+        <a href="#visit" class="btn btn-g">Find Us</a>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ── STATS BAR ── -->
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-n" data-count="4.4" data-float="1">0</span>
+      <span class="stat-l">Google Rating</span>
+    </div>
+    <div class="stat">
+      <span class="stat-n" data-count="1000" data-plus="1">0</span>
+      <span class="stat-l">Happy Customers</span>
+    </div>
+    <div class="stat">
+      <span class="stat-n" data-count="60" data-plus="1">0</span>
+      <span class="stat-l">Flavours</span>
+    </div>
+    <div class="stat">
+      <span class="stat-n" data-count="14">0</span>
+      <span class="stat-l">Hours Open Daily</span>
+    </div>
+  </div>
+
+  <!-- ── MARQUEE ── -->
+  <div class="mq-wrap">
+    <div class="mq-track" id="mqTrack"></div>
+  </div>
+
+  <!-- ── MENU SECTION ── -->
+  <section class="section menu-sec" id="menu">
+    <div class="container">
+      <div class="menu-head reveal">
+        <p class="sec-tag">Full Menu</p>
+        <h2 class="sec-title">Everything We Serve</h2>
+        <p class="sec-desc">From ₹15 sodas to loaded burgers — there's something for everyone.</p>
+      </div>
+
+      <!-- Search -->
+      <div class="search-wrap reveal">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search any item…" oninput="renderMenu()">
+      </div>
+
+      <!-- Category Tabs (injected by JS) -->
+      <div class="cat-tabs reveal" id="catTabs"></div>
+
+      <!-- Sub-category Tabs (injected by JS) -->
+      <div class="sub-tabs" id="subTabs"></div>
+
+      <!-- Menu Grid (injected by JS) -->
+      <div class="menu-grid" id="menuGrid"></div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES SECTION ── -->
+  <section class="section feat-sec" id="features">
+    <div class="container">
+      <p class="sec-tag" style="color:var(--yellow)">Why Choose Us?</p>
+      <h2 class="sec-title reveal" style="color:#fff">The Soda Splash Difference</h2>
+      <div class="feat-grid">
+        <div class="feat-card reveal">
+          <span class="feat-icon">🎨</span>
+          <div class="feat-title">60+ Unique Flavours</div>
+          <div class="feat-desc">Original soda recipes crafted exclusively for Soda Splash — you won't find these anywhere else.</div>
+        </div>
+        <div class="feat-card reveal" style="transition-delay:.1s">
+          <span class="feat-icon">⚡</span>
+          <div class="feat-title">Lightning Fast Service</div>
+          <div class="feat-desc">Order in, served out. No long waits, no nonsense — just great drinks at great speed.</div>
+        </div>
+        <div class="feat-card reveal" style="transition-delay:.2s">
+          <span class="feat-icon">💰</span>
+          <div class="feat-title">Budget Friendly</div>
+          <div class="feat-desc">Sodas starting at ₹15. Bring your whole squad and still have change left over.</div>
+        </div>
+        <div class="feat-card reveal" style="transition-delay:.3s">
+          <span class="feat-icon">🍔</span>
+          <div class="feat-title">Full Food Menu</div>
+          <div class="feat-desc">Not just drinks — pizza, burgers, momos, rolls, Chinese, fries, and more awaiting you.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── REVIEWS SECTION ── -->
+  <section class="section rev-sec" id="reviews">
+    <div class="container">
+      <p class="sec-tag">Customer Reviews</p>
+      <h2 class="sec-title reveal">Don't Take Our Word</h2>
+
+      <!-- Rating Summary -->
+      <div class="rev-summary reveal">
+        <div>
+          <div class="big-r-num">4.4</div>
+          <div class="big-r-stars">★★★★★</div>
+          <div class="big-r-lbl">1,032+ Google reviews</div>
+        </div>
+        <div class="r-bars">
+          <div class="r-row"><span class="r-lbl">5</span><div class="r-bg"><div class="r-fill" data-w="68"></div></div><span class="r-ct">68%</span></div>
+          <div class="r-row"><span class="r-lbl">4</span><div class="r-bg"><div class="r-fill" data-w="20"></div></div><span class="r-ct">20%</span></div>
+          <div class="r-row"><span class="r-lbl">3</span><div class="r-bg"><div class="r-fill" data-w="7" ></div></div><span class="r-ct">7%</span></div>
+          <div class="r-row"><span class="r-lbl">2</span><div class="r-bg"><div class="r-fill" data-w="3" ></div></div><span class="r-ct">3%</span></div>
+          <div class="r-row"><span class="r-lbl">1</span><div class="r-bg"><div class="r-fill" data-w="2" ></div></div><span class="r-ct">2%</span></div>
+        </div>
+      </div>
+
+      <!-- Review Cards -->
+      <div class="rev-grid">
+        <div class="rev-card reveal">
+          <div class="rev-stars">★★★★★</div>
+          <p class="rev-text">"Ultimate place to hang out with buddies. Great taste, fabulous people. The owner has a mind-blowing sense of humor. If you've never been here, you've lost a sparkling time!"</p>
+          <div class="rev-auth">Local Guide</div>
+          <div class="rev-time">2 months ago</div>
+        </div>
+        <div class="rev-card reveal" style="transition-delay:.1s">
+          <div class="rev-stars">★★★★★</div>
+          <p class="rev-text">"A refreshing spot for quirky sodas and cool mocktails. Great flavors, vibrant vibes, and a fun place to chill with friends. Reasonable prices and quick service!"</p>
+          <div class="rev-auth">Priya S.</div>
+          <div class="rev-time">3 weeks ago</div>
+        </div>
+        <div class="rev-card reveal" style="transition-delay:.2s">
+          <div class="rev-stars">★★★★★</div>
+          <p class="rev-text">"Everything on the menu is delicious. First timers — try the Fruit Punch Float. It is simply awesome. Best place for spending time and shaking your soul!"</p>
+          <div class="rev-auth">Rahul M.</div>
+          <div class="rev-time">1 month ago</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VISIT SECTION ── -->
+  <section class="section visit-sec" id="visit">
+    <div class="container">
+      <div class="visit-grid">
+        <div>
+          <p class="sec-tag">Come Find Us</p>
+          <h2 class="sec-title reveal">We're Right Here for You</h2>
+
+          <div class="info-row reveal">
+            <div class="info-ico">📍</div>
+            <div>
+              <div class="info-lbl">Address</div>
+              <div class="info-val">Near UCO Bank, Sardarpura,<br>Jodhpur, Rajasthan — 342003</div>
+            </div>
+          </div>
+          <div class="info-row reveal">
+            <div class="info-ico">🕙</div>
+            <div>
+              <div class="info-lbl">Hours</div>
+              <div class="info-val">Open Every Day · 10:00 AM – 12:00 AM</div>
+            </div>
+          </div>
+          <div class="info-row reveal">
+            <div class="info-ico">📞</div>
+            <div>
+              <div class="info-lbl">Phone</div>
+              <div class="info-val"><a href="tel:+919829745400">+91 98297 45400</a></div>
+            </div>
+          </div>
+          <div class="info-row reveal">
+            <div class="info-ico">🛵</div>
+            <div>
+              <div class="info-lbl">Delivery</div>
+              <div class="info-val">Available on Zomato &amp; Swiggy</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map Card -->
+        <div class="map-card reveal">
+          <div class="map-pin-big">📍</div>
+          <div class="map-title">The Soda Splash</div>
+          <div class="map-addr">Sardarpura, Jodhpur, Rajasthan</div>
+          <button class="map-btn" onclick="openMap()">Open in Google Maps →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <span class="f-logo">🥤 The Soda Splash</span>
+    Near UCO Bank, Sardarpura · Jodhpur, Rajasthan 342003<br>
+    <a href="tel:+919829745400">+91 98297 45400</a> · Open daily 10 AM – 12 AM · Available on Zomato &amp; Swiggy<br><br>
+    <span style="font-size:.76rem;">© 2025 The Soda Splash · All rights reserved</span>
+  </footer>
+
+  <!-- ── FLOATING CART BAR ── -->
+  <div class="cart-bar" id="cartBar">
+    <div class="cart-cnt" id="cartCount">0</div>
+    <div class="cart-txt" id="cartText">items in cart</div>
+    <div class="cart-tot" id="cartTotal">₹0</div>
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>
